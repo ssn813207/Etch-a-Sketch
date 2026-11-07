@@ -5,13 +5,18 @@
 }
 
 .container{
-    display: flex;
-    width: 800px;
-    flex-wrap: wrap;
+    --n: 16;            
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 960px;
+  height: 960px;
+  margin-top: 12px;
 }
 
+
 .square {
+    flex: 0 0 calc(100% / var(--n));
+    height: calc(100% / var(--n));
     border: 1px solid blueviolet;
-    width: 50px;
-    height: 50px;
 }
