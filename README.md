@@ -1,1 +1,2 @@
 # Etch-a-Sketch
+Using dom and javascript implement sketch,using loopy and flex drawing sarting layout,using Dom and eventlistener listen mouse event,chageing the layout style and background opacity at the time,with a buttonlistner to change grids number.
