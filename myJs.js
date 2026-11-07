@@ -7,18 +7,34 @@ function draw(n) {
   container.style.setProperty("--n", n);
   container.replaceChildren();
 
+  let drawing = false;
+
+  document.addEventListener("mouseup", () => {
+      drawing = false;
+  });
+
   for (let i = 0; i < n * n; i++){
       const grid = document.createElement("div");
       grid.classList.add("square");
+      
+
+      grid.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          drawing = true;
+          grid.style.backgroundColor = "rgba(0,0,0,0.1";
+      });
+
       grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = "blue";
-    });
-      grid.addEventListener("mouseleave", () => {
-        grid.style.backgroundColor = "blue";
+          if (!drawing) return;
+          const steps = Math.min(10, Number(grid.dataset.steps ?? 0) + 1);
+          grid.dataset.steps = String(steps);
+          grid.style.backgroundColor =`rgba(0, 0, 0, ${steps / 10})`;
+
+
+          
     });
       container.appendChild(grid);
   }
-
 }
 
 

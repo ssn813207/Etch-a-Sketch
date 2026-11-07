@@ -18,5 +18,5 @@
 .square {
     flex: 0 0 calc(100% / var(--n));
     height: calc(100% / var(--n));
-    border: 1px solid blueviolet;
+    border: 1px solid gray;
 }
